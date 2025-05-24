@@ -15,6 +15,44 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+    font-size: 15pt; color: black; font-family: sans-serif; background: #5B5B5B;
+}
+
+.intText 
+{
+     height: 60px; width: auto; margin: 20px 10px; border: 2px solid; border-radius: 8px; background: #6E718E; text-align: right; padding-right: 10px; overflow-x: scroll;
+}
+.intTextValue {
+  font-size: 19.5px;
+}
+.didpos
+ {
+     margin: 20px 10px; 
+ }
+.rang1 > div , .rang2 > div , .rang3 > div , .rang4 > div , .rang5 > div , .clear {
+     height: 70px; width: 70px; background: #8E8E8E; border: 2px solid; border-radius: 8px; text-align: center; font-size: 25px; margin: 10px; transition: .25s linear;
+}
+
+.rang1 > div:hover , .rang2 > div:hover , .rang3 > div:hover , .rang4 > div:hover , .rang5 > div:hover {
+  background: whitesmoke;
+}
+
+
+.rang1 , .rang2 , .rang3 , .rang4 {
+     display: flex;
+}
+.rang5 {
+  position: absolute; left: 300px; top: 94px;
+}
+.rang5 > div {
+  margin-top: 20px; background: #6E718E;
+}
+.rang5 > div > p , .rang4 > div > p , .rang3 > div > p , .rang2 > div > p , .rang2 > div > p , .rang1 > div > p {
+  position: relative; top: -8px;
+}
+  </style>
 </head>
 
 <body>
@@ -60,5 +98,75 @@
 
 
   <script src="main.js"></script>
+<script>
+  const intText = document.querySelector('.intTextValue');
+
+const btn = document.querySelectorAll('.btn');
+
+let nombre1 = '';
+
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener('click',() => {
+      if (btn[i].textContent.trim() == '1') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '2') {
+       nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '3') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '4') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '5') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '6') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '7') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '8') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '9') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '0') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '+') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '-') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == 'x') {
+        nombre1 += '*';
+      }
+      if (btn[i].textContent.trim() == '/') {
+        nombre1 += btn[i].textContent.trim();
+      }
+      if (btn[i].textContent.trim() == '.') {
+        nombre1 += btn[i].textContent.trim();
+      }
+       
+       intText.textContent += btn[i].textContent.trim()
+       
+    },false)
+  }
+
+$('.clear').click(function () {
+   return nombre1 = '', intText.textContent = '';
+})
+$('.calc').click(function () {
+   intText.textContent = eval(nombre1);
+    nombre1 = eval(nombre1);
+})
+</script>
+
+  
 </body>
 </html>
